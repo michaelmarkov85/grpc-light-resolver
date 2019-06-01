@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "wrappers.proto";
+
+package m.resolver;
+
+service resolver {
+    rpc FirstMethod (google.protobuf.StringValue) returns (IpsResponse);
+}
+
+message IpsResponse {
+    string host_name = 1;
+    repeated string ips = 2;
+}
